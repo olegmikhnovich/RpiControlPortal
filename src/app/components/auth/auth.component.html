@@ -1,0 +1,30 @@
+<mat-card class="auth-card">
+  <mat-card-title>Authorization</mat-card-title>
+  <mat-card-subtitle *ngIf="this.invalidAuth">Error! Invalid login or password.</mat-card-subtitle>
+  <mat-card-content>
+    <form class="auth-form">
+      <mat-form-field class="login-field">
+        <input matInput #login placeholder="Login" [formControl]="fieldFormControl">
+        <mat-error *ngIf="fieldFormControl.hasError('required')">
+          Login is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="pwd-field">
+        <input matInput placeholder="Password"
+               #pwd
+               [formControl]="fieldFormControl"
+               [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+        <mat-error *ngIf="fieldFormControl.hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button
+              color="primary"
+              (click)="onSubmit(login.value, pwd.value)"
+              class="submit-button">
+        Login
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
