@@ -1,0 +1,19 @@
+.container {
+  padding: 1em;
+  width: 100%;
+}
+
+.data-control {
+  width: 100%;
+}
+
+mat-divider {
+  margin: 1em;
+}
+
+mat-card {
+  width: 250px;
+  float:left;
+  margin-left: .5em;
+  margin-top: .1em;
+}

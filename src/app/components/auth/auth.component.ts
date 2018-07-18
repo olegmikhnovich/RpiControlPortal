@@ -35,7 +35,7 @@ export class AuthComponent implements  OnInit {
   private initIoConnection(): void {
     this.ioConnection = this.controlService.onMessage()
       .subscribe((message: string) => {
-        if (message === 'OK') {
+        if (message === '[auth]OK') {
           this.authService.login();
         } else {
           this.invalidAuth = true;

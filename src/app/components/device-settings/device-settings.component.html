@@ -1,3 +1,39 @@
-<p>
-  device-settings works!
-</p>
+<div class="container">
+  <mat-card>
+    <h3>Device settings</h3>
+
+    <p>Change your device name</p>
+    <mat-form-field class="data-control">
+      <input matInput placeholder="New device name" [(ngModel)]="deviceNameModel">
+    </mat-form-field>
+    <button mat-raised-button (click)="saveDeviceName()">Save</button>
+
+    <p>Change your password</p>
+    <mat-form-field class="data-control">
+      <input matInput placeholder="Old password" #oldpwd
+             [type]="hide1 ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="data-control">
+      <input matInput placeholder="New password" #newpwd
+             [type]="hide2 ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="data-control">
+      <input matInput placeholder="Confirm password" #confpwd
+             [type]="hide3 ? 'password' : 'text'">
+      <mat-icon matSuffix (click)="hide3 = !hide3">{{hide3 ? 'visibility' : 'visibility_off'}}</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button>Save</button>
+  </mat-card>
+
+  <mat-card>
+    <h3>Audio control</h3>
+    <p>PCM default device (alpha)</p>
+    <mat-slider class="data-control"
+                [min]="0" [max]="100" [step]="1"
+                [thumbLabel]="true" [(ngModel)]="audioVolumeValue">
+    </mat-slider>
+  </mat-card>
+
+</div>

@@ -10,6 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppComponent } from './app.component';
 import { DeviceSettingsComponent } from './components/device-settings/device-settings.component';
@@ -44,6 +46,8 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatCardModule,
     MatInputModule,
+    MatSliderModule,
+    MatSnackBarModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

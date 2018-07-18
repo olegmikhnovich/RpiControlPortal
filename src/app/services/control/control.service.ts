@@ -3,17 +3,22 @@ import { Observable } from 'rxjs';
 import { Event } from '../../models/event';
 import * as socketIo from 'socket.io-client';
 
-const SERVER_URL = 'http://192.168.100.2:4820';
-
 @Injectable({
   providedIn: 'root'
 })
 export class ControlService {
+  private SERVER_URL = ControlService.setServerUrl();
   private socket: any;
   private connected = false;
 
+  static setServerUrl(): string {
+    const l = window.location.href;
+    const ip = l.split('://')[1].split('/')[0].split(':')[0];
+    return `http://${ip}:4820`;
+  }
+
   public initSocket(): void {
-    this.socket = socketIo(SERVER_URL);
+    this.socket = socketIo(this.SERVER_URL);
     this.socket.connect();
     this.onEvent(Event.CONNECT).subscribe(() => {
       this.connected = true;
