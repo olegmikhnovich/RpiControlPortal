@@ -11,28 +11,28 @@
     <p>Change your password</p>
     <mat-form-field class="data-control">
       <input matInput placeholder="Old password" #oldpwd
-             [type]="hide1 ? 'password' : 'text'">
+             [type]="hide1 ? 'password' : 'text'" [(ngModel)]="pwd1Model">
       <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility' : 'visibility_off'}}</mat-icon>
     </mat-form-field>
     <mat-form-field class="data-control">
       <input matInput placeholder="New password" #newpwd
-             [type]="hide2 ? 'password' : 'text'">
+             [type]="hide2 ? 'password' : 'text'" [(ngModel)]="pwd2Model">
       <mat-icon matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility' : 'visibility_off'}}</mat-icon>
     </mat-form-field>
     <mat-form-field class="data-control">
       <input matInput placeholder="Confirm password" #confpwd
-             [type]="hide3 ? 'password' : 'text'">
+             [type]="hide3 ? 'password' : 'text'" [(ngModel)]="pwd3Model">
       <mat-icon matSuffix (click)="hide3 = !hide3">{{hide3 ? 'visibility' : 'visibility_off'}}</mat-icon>
     </mat-form-field>
-    <button mat-raised-button>Save</button>
+    <button mat-raised-button (click)="updatePassword()">Save</button>
   </mat-card>
 
   <mat-card>
     <h3>Audio control</h3>
-    <p>PCM default device (alpha)</p>
+    <p>Default speakers (PCM)</p>
     <mat-slider class="data-control"
                 [min]="0" [max]="100" [step]="1"
-                [thumbLabel]="true" [(ngModel)]="audioVolumeValue">
+                [thumbLabel]="true" [(ngModel)]="audioVolumeValue" (change)="setDeviceVolume()">
     </mat-slider>
   </mat-card>
 
