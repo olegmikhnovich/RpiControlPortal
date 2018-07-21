@@ -1,10 +1,22 @@
 <div class="container">
   <mat-card>
+    <h3>My device</h3>
+    <img class="img-container" [src]="pictureSrc" />
+    <p><strong>Name: </strong>{{deviceInfo.name}}</p>
+    <p><strong>Model: </strong>{{deviceInfo.model}}</p>
+    <p><strong>OS: </strong>{{deviceInfo.os}}</p>
+    <p><strong>t°: </strong>{{deviceInfo.temp}}</p>
+    <button mat-mini-fab color="primary" (click)="this.getDeviceInfo()">
+      <mat-icon>refresh</mat-icon>
+    </button>
+  </mat-card>
+
+  <mat-card>
     <h3>Device settings</h3>
 
     <p>Change your device name</p>
     <mat-form-field class="data-control">
-      <input matInput placeholder="New device name" [(ngModel)]="deviceNameModel">
+      <input matInput placeholder="New device name" [(ngModel)]="newDeviceNameModel">
     </mat-form-field>
     <button mat-raised-button (click)="saveDeviceName()">Save</button>
 
