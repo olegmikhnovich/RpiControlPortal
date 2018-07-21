@@ -1,0 +1,14 @@
+<div class="container">
+  <mat-card>
+    <h3>RpiControl Portal</h3>
+    <p>RpiControl lets you configure and manage your device remotely over your local network.</p>
+    <p>Version: <strong>{{version}}</strong></p>
+    <p>Author: <a href="https://github.com/olegmikhnovich">Oleg Mikhnovich</a></p>
+    <button mat-stroked-button color="primary"
+            (click)="openLink(rpiRepo)">RpiControl Sources</button>
+    <button mat-stroked-button color="primary"
+            (click)="openLink(rpiRepoPortal)">RpiControl Portal Sources</button>
+    <button mat-stroked-button color="primary"
+            (click)="openLink(rpiRepoDash)">RpiControl Dashboard Sources</button>
+  </mat-card>
+</div>

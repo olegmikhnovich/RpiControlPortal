@@ -17,6 +17,11 @@ import { AppComponent } from './app.component';
 import { DeviceSettingsComponent } from './components/device-settings/device-settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AuthComponent } from './components/auth/auth.component';
+import { FileExplorerComponent } from './components/file-explorer/file-explorer.component';
+import { ConnectivityComponent } from './components/connectivity/connectivity.component';
+import { SSHComponent } from './components/ssh/ssh.component';
+import { AboutComponent } from './components/about/about.component';
+
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
 import { AuthService } from './services/auth-service/auth.service';
 import { ControlService } from './services/control/control.service';
@@ -25,6 +30,10 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
   { path: 'auth', component: AuthComponent },
   { path: 'device-settings', component: DeviceSettingsComponent, canActivate: [AuthGuardService] },
+  { path: 'file-explorer', component: FileExplorerComponent, canActivate: [AuthGuardService] },
+  { path: 'connectivity', component: ConnectivityComponent, canActivate: [AuthGuardService] },
+  { path: 'ssh', component: SSHComponent, canActivate: [AuthGuardService] },
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuardService] },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -33,7 +42,11 @@ const appRoutes: Routes = [
     AppComponent,
     DeviceSettingsComponent,
     NotFoundComponent,
-    AuthComponent
+    AuthComponent,
+    FileExplorerComponent,
+    ConnectivityComponent,
+    SSHComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
