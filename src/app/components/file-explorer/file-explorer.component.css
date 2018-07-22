@@ -1,0 +1,8 @@
+.container {
+  padding: 1em;
+}
+
+.explorer-list {
+  height: 70vh;
+  overflow-y: auto;
+}

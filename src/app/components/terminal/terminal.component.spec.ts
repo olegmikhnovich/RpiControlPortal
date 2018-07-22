@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SSHComponent } from './ssh.component';
+import { TerminalComponent } from './terminal.component';
 
-describe('SSHComponent', () => {
-  let component: SSHComponent;
-  let fixture: ComponentFixture<SSHComponent>;
+describe('TerminalComponent', () => {
+  let component: TerminalComponent;
+  let fixture: ComponentFixture<TerminalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SSHComponent ]
+      declarations: [ TerminalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SSHComponent);
+    fixture = TestBed.createComponent(TerminalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,23 @@
-<p>
-  file-explorer works!
-</p>
+<div class="container">
+  <mat-card>
+    <h3>File Explorer</h3>
+    <button mat-icon-button color="primary" *ngIf="homeDir !== currentDir" (click)="goBack()">
+      <mat-icon aria-label="Back">arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="goHome()">
+      <mat-icon aria-label="Home">home</mat-icon>
+    </button>
+    <button mat-icon-button color="primary" (click)="refresh()">
+      <mat-icon aria-label="Refresh">refresh</mat-icon>
+    </button>
+
+    <mat-list class="explorer-list">
+      <h3 mat-subheader>{{currentDir}}</h3>
+      <mat-list-item *ngFor="let folder of folders" (click)="openItem(folder)">
+        <mat-icon *ngIf="!folder.includes('.')" mat-list-icon>folder</mat-icon>
+        <mat-icon *ngIf="folder.includes('.')" mat-list-icon>insert_drive_file</mat-icon>
+        <h4 mat-line>{{folder}}</h4>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>

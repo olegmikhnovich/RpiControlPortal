@@ -48,4 +48,8 @@ export class ControlService {
   public isConnected(): boolean {
     return this.connected;
   }
+
+  public getServerUrl(): string {
+    return this.SERVER_URL;
+  }
 }

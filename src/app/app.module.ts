@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatListModule } from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { DeviceSettingsComponent } from './components/device-settings/device-settings.component';
@@ -19,7 +20,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { FileExplorerComponent } from './components/file-explorer/file-explorer.component';
 import { ConnectivityComponent } from './components/connectivity/connectivity.component';
-import { SSHComponent } from './components/ssh/ssh.component';
+import { TerminalComponent } from './components/terminal/terminal.component';
 import { AboutComponent } from './components/about/about.component';
 
 import { AuthGuardService } from './services/auth-guard/auth-guard.service';
@@ -32,7 +33,7 @@ const appRoutes: Routes = [
   { path: 'device-settings', component: DeviceSettingsComponent, canActivate: [AuthGuardService] },
   { path: 'file-explorer', component: FileExplorerComponent, canActivate: [AuthGuardService] },
   { path: 'connectivity', component: ConnectivityComponent, canActivate: [AuthGuardService] },
-  { path: 'ssh', component: SSHComponent, canActivate: [AuthGuardService] },
+  { path: 'terminal', component: TerminalComponent, canActivate: [AuthGuardService] },
   { path: 'about', component: AboutComponent, canActivate: [AuthGuardService] },
   { path: '**', component: NotFoundComponent }
 ];
@@ -45,7 +46,7 @@ const appRoutes: Routes = [
     AuthComponent,
     FileExplorerComponent,
     ConnectivityComponent,
-    SSHComponent,
+    TerminalComponent,
     AboutComponent
   ],
   imports: [
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSliderModule,
     MatSnackBarModule,
+    MatListModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
