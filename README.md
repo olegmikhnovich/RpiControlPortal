@@ -29,7 +29,7 @@ chmod +x /path/to/installscript.sh
 ```
 After this steps you should reboot your device.
 
-If you want build this project using PC, you can [build website locally](https://github.com/olegmikhnovich/RpiControl#build-website-locally)
+If you want build this project using PC, you can [build website locally](https://github.com/olegmikhnovich/RpiControlPortal#build-website-locally)
 
 ### Full build project structure
 
