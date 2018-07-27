@@ -1,4 +1,4 @@
-import {OnInit, Component} from '@angular/core';
+import { OnInit, Component } from '@angular/core';
 import { ControlService } from '../../services/control/control.service';
 import { MatSnackBar } from '@angular/material';
 import { Event } from '../../models/event';

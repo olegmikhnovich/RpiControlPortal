@@ -1,0 +1,21 @@
+.container {
+  padding: 1em;
+}
+
+.terminal-field {
+  width: 100%;
+  max-height: 640px;
+  overflow-y: auto;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.red-label {
+  color: red;
+}
+
+.green-label {
+  color: green;
+}

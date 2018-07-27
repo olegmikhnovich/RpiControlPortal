@@ -1,3 +1,21 @@
-<p>
-  connectivity works!
-</p>
+<div class="container">
+  <mat-card>
+    <h3>Direct connections</h3>
+    <button mat-stroked-button (click)="this.getEthConnection()">Refresh</button>
+    <p *ngIf="ethConn === undefined">Not found.</p>
+    <div *ngIf="ethConn !== undefined">
+      <p><strong>Name: </strong>{{ethConn.name}}</p>
+      <p><strong>IP: </strong>{{ethConn.ip}}</p>
+      <p><strong>MAC: </strong>{{ethConn.mac}}</p>
+    </div>
+
+  </mat-card>
+  <mat-card>
+    <h3>WI-FI</h3>
+    <button mat-stroked-button>Refresh</button>
+  </mat-card>
+  <mat-card>
+    <h3>Bluetooth</h3>
+    <button mat-stroked-button>Refresh</button>
+  </mat-card>
+</div>

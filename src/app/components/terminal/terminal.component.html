@@ -1,3 +1,20 @@
-<p>
-  terminal works!
-</p>
+<div class="container">
+  <mat-card>
+    <h3>Terminal</h3>
+    <textarea matInput placeholder="Terminal"
+              class="terminal-field"
+              readonly cdkTextareaAutosize="true">
+      {{terminalData}}
+    </textarea>
+    <p *ngIf="terminalProcessStatus != -777">
+      Process exited with code:
+      <span [ngClass]="(terminalProcessStatus === 0) ? 'green-label' : 'red-label'">
+        {{terminalProcessStatus}}
+      </span>
+    </p>
+    <mat-form-field class="input-field">
+      <input matInput [(ngModel)]="command" placeholder="Enter command" name="Command">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="sendCommand()">Send</button>
+  </mat-card>
+</div>
