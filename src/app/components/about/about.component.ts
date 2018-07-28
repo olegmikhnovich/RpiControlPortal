@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  version = '0.0.0';
+  version = '1.0.0';
   rpiRepo = 'https://github.com/olegmikhnovich/RpiControl';
   rpiRepoPortal = 'https://github.com/olegmikhnovich/RpiControlPortal';
   rpiRepoDash = 'https://github.com/olegmikhnovich/RpiControlDashboard';

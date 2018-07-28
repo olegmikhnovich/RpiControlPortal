@@ -17,4 +17,22 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.controlService.initSocket();
   }
+
+  powerOff(): void {
+    if (!this.controlService.isConnected()) { return; }
+    const signature = 'set-power-off';
+    const pkg = {
+      action: signature
+    };
+    this.controlService.send(JSON.stringify(pkg));
+  }
+
+  reboot(): void {
+    if (!this.controlService.isConnected()) { return; }
+    const signature = 'set-reboot';
+    const pkg = {
+      action: signature
+    };
+    this.controlService.send(JSON.stringify(pkg));
+  }
 }

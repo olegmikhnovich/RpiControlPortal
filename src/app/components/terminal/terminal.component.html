@@ -13,8 +13,7 @@
       </span>
     </p>
     <mat-form-field class="input-field">
-      <input matInput [(ngModel)]="command" placeholder="Enter command" name="Command">
+      <input matInput [(ngModel)]="command" placeholder="Enter command" name="Command" (keyup.enter)="sendCommand()">
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="sendCommand()">Send</button>
   </mat-card>
 </div>

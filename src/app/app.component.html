@@ -7,9 +7,19 @@
     <span>RpiControl Portal</span>
     <span class="spacer"></span>
     <div class="tools-container" *ngIf="this.authService.isLoggedIn()">
-      <button mat-icon-button>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>power_settings_new</mat-icon>
       </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="powerOff()">
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Power off</span>
+        </button>
+        <button mat-menu-item (click)="reboot()">
+          <mat-icon>refresh</mat-icon>
+          <span>Reboot</span>
+        </button>
+      </mat-menu>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
