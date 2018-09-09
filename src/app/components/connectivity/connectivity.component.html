@@ -13,9 +13,28 @@
   <mat-card>
     <h3>WI-FI</h3>
     <button mat-stroked-button>Refresh</button>
+    <p>Not supported.</p>
   </mat-card>
   <mat-card>
     <h3>Bluetooth</h3>
-    <button mat-stroked-button>Refresh</button>
+    <mat-slide-toggle
+      class="slide-toggle"
+      color="primary"
+      (change)="toggleSlideBle()"
+      [(ngModel)]="bleChecked"
+      [disabled]="bleDisabled">
+    </mat-slide-toggle>
+    <h5 *ngIf="bleChecked">Paired devices</h5>
+    <mat-list>
+      <mat-list-item *ngFor="let device of blePairedDevices" (click)="removeBleDevice(device)">
+        <h3 matLine> {{device.name}} </h3>
+      </mat-list-item>
+    </mat-list>
+    <h5 *ngIf="bleChecked">Available devices</h5>
+    <mat-list>
+      <mat-list-item *ngFor="let device of bleDevices" (click)="connectBleDevice(device)">
+        <h3 matLine> {{device.name}} </h3>
+      </mat-list-item>
+    </mat-list>
   </mat-card>
 </div>

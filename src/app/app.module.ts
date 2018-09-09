@@ -13,7 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
-import { MatMenuModule } from '@angular/material';
+import { MatMenuModule, MatSlideToggleModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { DeviceSettingsComponent } from './components/device-settings/device-settings.component';
@@ -65,6 +65,7 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     MatListModule,
     MatMenuModule,
+    MatSlideToggleModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
