@@ -1,4 +1,6 @@
-# RpiControlPortal [![Build Status](https://travis-ci.org/olegmikhnovich/RpiControlPortal.svg?branch=master)](https://travis-ci.org/olegmikhnovich/RpiControlPortal)
+# RpiControlPortal (Deprecated)
+[![Build Status](https://travis-ci.org/olegmikhnovich/RpiControlPortal.svg?branch=master)](https://travis-ci.org/olegmikhnovich/RpiControlPortal)
+[![Status](https://img.shields.io/badge/status-deprecated-red.svg)](https://github.com/olegmikhnovich/RpiControl#old-versions)
 
 It's a web portal, where you can control your Raspberry Pi device.
 
